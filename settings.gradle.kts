@@ -1,2 +1,2 @@
 include(":app")
-rootProject.name="Launcher"
+rootProject.name="evowluator-android-launcher"
