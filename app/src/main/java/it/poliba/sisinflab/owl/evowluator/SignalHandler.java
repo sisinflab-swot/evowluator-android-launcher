@@ -2,7 +2,7 @@ package it.poliba.sisinflab.owl.evowluator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.Intent;
+import android.os.Process;
 
 public class SignalHandler extends AppCompatActivity {
 
@@ -10,12 +10,11 @@ public class SignalHandler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        if(action != null && action.equals("it.poliba.sisinflab.owl.evowluator.END")) {
-            android.os.Process.killProcess(android.os.Process.myPid());
+
+        String action = getIntent().getAction();
+        if(action != null && action.endsWith(".END")) {
+            Process.killProcess(Process.myPid());
             finish();
         }
-
     }
 }
