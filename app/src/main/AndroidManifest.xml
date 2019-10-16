@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.poliba.sisinflab.owl.evowluator">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SignalHandler">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="it.poliba.sisinflab.owl.evowluator.END"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <instrumentation
+        android:name=".Launcher"
+        android:targetPackage="it.poliba.sisinflab.owl.evowluator"
+        />
+
+</manifest>
